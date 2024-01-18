@@ -1,5 +1,3 @@
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:job_finder/business_logic/apply_job_cubit/apply_job_cubit.dart';
@@ -47,7 +45,7 @@ class _ApplyJob3State extends State<ApplyJob3> {
             height: 2.h,
           ),
           Visibility(
-            visible: widget.applyJobCubit.cvFileName!='',
+            visible: widget.applyJobCubit.cvFilePath!='',
             child: Container(
               height: 12.h,
               padding: EdgeInsets.all(5.sp),
