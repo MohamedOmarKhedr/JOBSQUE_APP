@@ -1,6 +1,6 @@
-# job_finder
+# easy_contacts
 
-Job Finder App for search adout jobs
+A new Flutter project.
 
 ## Getting Started
 
