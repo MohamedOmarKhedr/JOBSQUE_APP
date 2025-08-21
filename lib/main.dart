@@ -16,21 +16,24 @@ import 'business_logic/register_cubit/register_cubit.dart';
 import 'core/my_bloc_observer.dart';
 import 'data/remote_data/data_providers/my_dio.dart';
 
-
-
-void main() async {
+void main() async { 
   WidgetsFlutterBinding.ensureInitialized();
   await MyCache.initCache();
   Bloc.observer = MyBlocObserver();
   MyDio.dioInit();
-  runApp( MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
-   MyApp({super.key});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
   AppRouter appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
@@ -65,17 +68,15 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Job Finder App',
-        theme: ThemeData(
-
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+          debugShowCheckedModeBanner: false,
+          title: 'Job Finder App',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
           onGenerateRoute: appRouter.onGenerateRoute,
-
-            ),
-      ); });
+        ),
+      );
+    });
   }
 }
-
