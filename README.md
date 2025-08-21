@@ -1,4 +1,4 @@
-# easy_contacts
+# jobsque
 
 A new Flutter project.
 
