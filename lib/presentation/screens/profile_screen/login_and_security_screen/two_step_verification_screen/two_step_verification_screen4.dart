@@ -148,7 +148,7 @@ class _TwoStepVerificationScreen4State
                 child: MyButton(
                   onPressed: () {
                     if (code.length == 6) {
-                      Fluttertoast.showToast(
+                      Fluttertoast.showToast( 
                           msg: "Your active identity has been verified",
                           toastLength: Toast.LENGTH_SHORT,
                           gravity: ToastGravity.BOTTOM,
